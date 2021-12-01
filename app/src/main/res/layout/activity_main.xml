@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline2"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="网络请求返回内容在此显示"
+            android:textSize="20sp" />
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.39" />
+
+    <Button
+        android:id="@+id/btn_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#C66666"
+        android:text="原生POST请求"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_get"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_get"
+        app:layout_constraintTop_toTopOf="@+id/btn_get" />
+
+    <Button
+        android:id="@+id/btn_get"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#C66666"
+        android:text="原生GET请求"
+        app:layout_constraintBottom_toTopOf="@+id/btn_post_okhttp"
+        app:layout_constraintEnd_toStartOf="@+id/btn_post"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_get_okhttp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#B371CF"
+        android:text="OkHttp POST请求"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_post_okhttp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_post_okhttp"
+        app:layout_constraintTop_toTopOf="@+id/btn_post_okhttp" />
+
+    <Button
+        android:id="@+id/btn_post_okhttp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#B371CF"
+        android:text="OkHttp GET请求"
+        app:layout_constraintBottom_toTopOf="@+id/btn_xml_pull"
+        app:layout_constraintEnd_toStartOf="@+id/btn_get_okhttp"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_get" />
+
+    <Button
+        android:id="@+id/btn_xml_pull"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#797ACF"
+        android:text="PULL解析XML"
+        app:layout_constraintBottom_toTopOf="@+id/btn_json_jsonObject"
+        app:layout_constraintEnd_toStartOf="@+id/btn_xml_sax"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_post_okhttp" />
+
+    <Button
+        android:id="@+id/btn_xml_sax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#797ACF"
+        android:text="SAX解析XML"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_xml_pull"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_xml_pull"
+        app:layout_constraintTop_toTopOf="@+id/btn_xml_pull" />
+
+    <Button
+        android:id="@+id/btn_json_jsonObject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#E1BB91"
+        android:text="JSONOBJECT解析JSON"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView2"
+        app:layout_constraintEnd_toStartOf="@+id/btn_json_gson"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_xml_pull" />
+
+    <Button
+        android:id="@+id/btn_json_gson"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#E1BB91"
+        android:text="GSON解析JSON"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_json_jsonObject"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_json_jsonObject"
+        app:layout_constraintTop_toTopOf="@+id/btn_json_jsonObject" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
